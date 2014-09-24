@@ -1,10 +1,11 @@
 @import "includes/settings";
 
 body{
-  background-color: #2D2D2D;
-  color: #fff;
+  color: #333333;
 }
 header{
-  background-color: #eee;
-  height: 40px;
+  background: transparent url('../img/forest.jpg') repeat-x center;
+  color: #EEE;
+  height: 100px;
+  display: block;
 }
