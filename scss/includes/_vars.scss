@@ -1,0 +1,20 @@
+$default-prefixes: webkit moz ms o;
+@mixin build-prefix-values($property, $value, $prefixes: $default-prefixes) {
+  @each $prefix in $prefixes {
+    -#{$prefix}-#{$property}: #{$value};
+  }
+  #{$property}: #{$value};
+}
+
+@mixin transition($property: all, $delay: 1s, $timing: linear) {
+  $value: $property $delay $timing;
+  @include build-prefix-values('transition', $value);
+}
+
+@mixin border-radius($radius: 2px) {
+  @include build-prefix-values('border-radius', $radius);
+}
+
+@mixin box-sizing($value: border-box){
+  @include build-prefix-values('box-sizing', $value);
+}

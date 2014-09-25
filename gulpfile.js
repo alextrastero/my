@@ -1,30 +1,30 @@
-var gulp = require('gulp');
-var webserver = require('gulp-webserver');
-var sass = require('gulp-sass');
-var watch = require('gulp-watch');
+var gulp = require('gulp'),
+    watch = require('gulp-watch'),
+    livereload = require('gulp-livereload'),
+    sass = require('gulp-sass');
 
-gulp.task('webserver', function() {
-  gulp.src('.')
-    .pipe(webserver({
-      livereload: true
-    }));
+gulp.task('express', function() {
+  var express = require('express');
+  var app = express();
+  app.use(express.static(__dirname));
+  app.listen(8000);
 });
 
-gulp.task('sass', function () {
-  gulp.src('./scss/*.scss')
-    .pipe(sass({
-      outputStyle: 'compressed'
-    }))
-    .pipe(gulp.dest('./css'));
+gulp.task('styles', function() {
+  return gulp.src('scss/*.scss')
+    .pipe(sass({ outputStyle: 'compressed' }))
+    .pipe(gulp.dest('./css'))
+    .pipe(livereload());
 });
 
-gulp.task('html', function() {
-  return gulp.src([
-    './index.html'
-  ])
+
+gulp.task('watch', function() {
+  gulp.watch('./scss/**/*.scss', ['styles']);
+  gulp.watch('./js/**/*.js', livereload.changed);
+  gulp.watch('*.html', livereload.changed);
+  gulp.watch('./css/*.css', livereload.changed);
 });
 
-gulp.task('default', ['webserver'], function(){
-  gulp.watch('./scss/*.scss', ['sass']);
-  gulp.watch('./index.html', ['html']);
+gulp.task('default', ['styles', 'express', 'watch'], function() {
+
 });

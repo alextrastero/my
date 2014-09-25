@@ -21,4 +21,14 @@
     }
 }());
 
-// Place any jQuery/helper plugins in here.
+// plax setup
+// doc https://github.com/cameronmcefee/plax#documentation
+$(document).ready(function() {
+  initPlax();
+});
+
+function initPlax(){
+  $('header img.bg').plaxify({"xRange":40,"yRange":40});
+  $('header h1.title').plaxify({"xRange":50,"yRange":50, "invert":true});
+  $.plax.enable();
+}

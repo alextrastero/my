@@ -1,11 +1,36 @@
+@import "includes/grid";
 @import "includes/settings";
+@import "includes/vars";
 
-body{
-  color: #333333;
+.container{
 }
 header{
-  background: transparent url('../img/forest.jpg') repeat-x center;
-  color: #EEE;
-  height: 100px;
-  display: block;
+  // position: relative;
+  .bg-container{
+    color: #EEE;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 200px;
+    width: 1200px;
+    img.bg{
+      position: absolute;
+      width: 1243px;
+      height: 325px;
+      z-index: 1;
+      top: -60px;
+      left: -30px;
+    }
+    h1.title{
+      @extend .bold;
+      font-size: 100px;
+      position: absolute;
+      width: 100%;
+      z-index: 2;
+      text-align: center;
+      margin-top: 50px;
+    }
+  }
 }
