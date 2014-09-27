@@ -6,8 +6,8 @@ $default-prefixes: webkit moz ms o;
   #{$property}: #{$value};
 }
 
-@mixin transition($property: all, $delay: 1s, $timing: linear) {
-  $value: $property $delay $timing;
+@mixin transition($property: all, $delay: 0s, $timing: linear, $duration: 0.3s) {
+  $value: $property $delay $timing, $duration;
   @include build-prefix-values('transition', $value);
 }
 

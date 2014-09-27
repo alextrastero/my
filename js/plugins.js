@@ -23,12 +23,12 @@
 
 // plax setup
 // doc https://github.com/cameronmcefee/plax#documentation
-$(document).ready(function() {
-  // initPlax();
-});
-
 function initPlax(){
   $('header img.bg').plaxify({"xRange":8,"yRange":8});
   $('header h1.title').plaxify({"xRange":3,"yRange":3, "invert":true});
   $.plax.enable();
 }
+$(document).ready(function() {
+  // initPlax();
+});
+

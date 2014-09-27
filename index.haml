@@ -1,0 +1,38 @@
+!!! 5
+%html
+  %head
+    %title Alexander Garth Odell | Front-end Developer
+    %meta{ :charset => "utf-8" }
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
+    %meta{:content => "", :name => "description"}
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+    %link{:href => "/css/reset.css", :rel => "stylesheet"}
+    %link{:href => "/css/custom.css", :rel => "stylesheet"}
+    %link{:href => "font-awesome/css/font-awesome.min.css", :rel => "stylesheet"}
+    %script{:src => "js/vendor/modernizr-2.6.2.min.js"}
+    %script{:src => "js/vendor/jquery-1.10.2.min.js"}
+    %script{:src => "js/min/main-min.js"}
+    %script{:src => "js/min/plugins-min.js"}
+  %body
+    #content.container-fluid
+      
+      / header
+      %header
+        %h1 Alexander Garth Odell
+        %nav
+          %ul
+            %li
+              %a{title: @title, href: '/place1'} WORK
+            %li
+              %a{title: @title, href: '/place2'} ABOUT
+            %li
+              %a{title: @title, href: '/place3'} CONTACT
+
+      .splash
+        .welcome.row
+          %h2 Hi, my name is Alex Odell. <br> I Like to call myself a front-end developer.
+          %p Also a spanglobrit, passionate coder, music lover & geek-a-holic.
+          %ul
+            %li
+              %a{:href => "http://www.linkedin.com"} linkedin
+              %a{:href => "http://www.github.com"} github

@@ -2,43 +2,55 @@
 @import "includes/settings";
 @import "includes/vars";
 
-.container{
+body{
+  background-color: $pale-white;
 }
+
 header{
-  // position: relative;
-  .bg-container{
-    color: #EEE;
-    display: block;
-    overflow: hidden;
-    position: relative;
-    top: 0;
-    left: 0;
-    height: 200px;
-    width: 1200px;
-    .logo svg{
-      width: 250px;
-      position: absolute;
-      z-index: 2;
+  height: 100px;
+  line-height: 100px;
+  position: relative;
+  @include box-sizing;
+  h1{
+    display: inline-block;
+    text-indent: $pi;
+    background: url('../img/odella-logo.png') no-repeat center;
+    width: 113px;
+    height: 100px;
+  }
+  nav{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    ul{
+      li{
+        display: inline;
+        margin-left: 20px;
+        a{
+          text-decoration: none;
+          color: $dark-green;
+          @include transition('color');
+          &:hover{
+            color: $light-green;
+          }
+        }
+      }
     }
-    img.bg{
-      position: absolute;
-      width: 1243px;
-      height: 325px;
-      z-index: 1;
-      top: -60px;
-      left: -30px;
+  }
+}
+.splash{
+  .welcome{
+    background-color: $dark-green;
+    text-align: center;
+    color: $pale-white;
+    font-weight: 300;
+    padding: 20px;
+    width: 480px;
+    margin: 0 auto;
+    h2{
+      font-size: 1.8em;
+      line-height: 1.4em;
+      margin-bottom: 20px;
     }
-    // h1.title{
-    //   @extend .bold;
-    //   background: -webkit-linear-gradient(#D7E3D8, #EEEEEE);
-    //   -webkit-background-clip: text;
-    //   -webkit-text-fill-color: transparent;
-    //   font-size: 100px;
-    //   position: absolute;
-    //   width: 100%;
-    //   z-index: 2;
-    //   text-align: center;
-    //   margin-top: 50px;
-    // }
   }
 }

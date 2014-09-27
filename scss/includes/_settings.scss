@@ -1,8 +1,9 @@
+// fonts
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,700);
-
 body{
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+  font-size: 14px;
 }
 .bold{
   font-weight: 700;
@@ -10,3 +11,8 @@ body{
 .thin{
   font-weight: 300;
 }
+// colors
+$pale-white: #f6f7e9;
+$dark-green: #2d2d2d;
+$light-green: #86a997;
+$pi: -314159px;
